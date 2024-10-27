@@ -18,6 +18,21 @@ function App() {
     setSelectedTopic(selectedButton);
     console.log(selectedTopic);
   }
+
+  let tabcontent = <p>Please select a topic</p>;
+
+  if(selectedTopic)
+  {
+    tabcontent = <div id="tab-content">           
+      <h3>{EXAMPLES[selectedTopic].title}</h3>
+      <p>{EXAMPLES[selectedTopic].description}</p>
+      <pre>
+        <code>
+        {EXAMPLES[selectedTopic].code}
+        </code>
+      </pre>
+    </div>
+  }
   
   return (
     <div>
@@ -57,16 +72,9 @@ function App() {
           <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
           <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
         </menu>
-        {!selectedTopic && (<p>Please select a topic</p>) } /// in JS if statement before and is true then it renders the later statemet
-        {selectedTopic ? (<div id="tab-content">            //// Please see the github commits changes also 
-          <h3>{EXAMPLES[selectedTopic].title}</h3>
-          <p>{EXAMPLES[selectedTopic].description}</p>
-          <pre>
-            <code>
-            {EXAMPLES[selectedTopic].code}
-            </code>
-          </pre>
-        </div>) : null}
+
+        
+        {tabcontent}
         
         
        </section>
