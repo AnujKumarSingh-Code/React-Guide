@@ -43,22 +43,11 @@ function App() {
             Core Concepts
           </h2>
           <ul>
-            <CoreConcepts 
-             {...CORE_CONCEPTS[0]}
-            />
-            <CoreConcepts 
-              {...CORE_CONCEPTS[1]}
-            />
-            <CoreConcepts 
-              title={CORE_CONCEPTS[2].title}
-              description= {CORE_CONCEPTS[2].description}
-              image= {CORE_CONCEPTS[2].image}
-            />
-          <CoreConcepts 
-            title={CORE_CONCEPTS[3].title}
-            description= {CORE_CONCEPTS[3].description}
-            image= {CORE_CONCEPTS[3].image}
-          />
+
+            {CORE_CONCEPTS.map((conceptItem) => (
+              <CoreConcepts key={conceptItem.title} {...conceptItem}/>
+            ))}
+           
           </ul>
         </section>
 
