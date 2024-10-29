@@ -1,5 +1,5 @@
-export default function Tabs({children , buttons , buttonContainer }) {
-    const ButtonContainer = buttonContainer
+export default function Tabs({children , buttons , ButtonContainer = "menu" }) {
+    
     /// uppert case is imp in case of defining type of container
     return (
         <>
